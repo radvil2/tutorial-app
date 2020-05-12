@@ -1,0 +1,63 @@
+<div class="blog-container">
+  <header>
+    <div class="category">{{ blog?.category?.name }}</div>
+    <div class="title">{{ blog?.title }}</div>
+
+    <div class="fx pad">
+      <div class="meta">
+        <div class="photo" #user (click)="seeAuthorProfile()">
+          <img src="assets/portraits/1.jpg" alt="Author Photo" />
+        </div>
+
+        <div class="text">
+          <div class="name">
+            <div (click)="user.click()">{{ blog?.author?.name }}</div>
+            <button class="btn-ln">Follow</button>
+          </div>
+          <div class="date">{{ formatedDate }} | 18 min read</div>
+        </div>
+      </div>
+
+      <div class="share-links">
+        <a href="#" class="link tooltip">
+          <i class="fab fa-whatsapp"></i>
+          <span class="tooltiptext">Share on Whatsapp</span>
+        </a>
+        <a href="#" class="link tooltip">
+          <i class="fab fa-telegram"></i>
+          <span class="tooltiptext">Share on Telegram</span>
+        </a>
+        <a href="#" class="link tooltip">
+          <i class="fab fa-facebook"></i>
+          <span class="tooltiptext">Share on Facebook</span>
+        </a>
+        <a href="#" class="link tooltip">
+          <i class="fab fa-twitter"></i>
+          <span class="tooltiptext">Share on Twitter</span>
+        </a>
+      </div>
+    </div>
+    <!-- end of .fx -->
+  </header>
+
+  <figure>
+    <div class="feat-img">
+      <img [src]="featureImage" alt="Figure Image" />
+    </div>
+  </figure>
+
+  <main class="content">
+    <div [innerHTML]="blog?.content"></div>
+
+    <div class="bottom-meta">
+      <div class="likes">
+        <mat-icon>favorite_outline</mat-icon>&nbsp;
+        <!-- <i class="fa fa-thumb"></i>&nbsp;&nbsp; -->
+        <span>{{ blog?.likes }}</span>
+      </div>
+      <div class="tag-items">
+        <span class="tag-link" *ngFor="let tag of blog?.tags">#{{ tag }}</span>
+      </div>
+    </div>
+  </main>
+</div>

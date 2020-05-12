@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+
+main {
+  min-height: 100vh; // notice me senpai
+  margin: 0 0 3rem 5rem;
+  padding: 5rem 1rem 0rem 1rem;
+}
+
+footer {
+  margin: 0 0 0 5rem;
+}
+
+// small devices
+@media (max-width: map-get($grid-breakpoints, md)) {
+  main {
+    margin: 0 0 20px 0;
+  }
+
+  footer {
+    margin: 0;
+  }
+}

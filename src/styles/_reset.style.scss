@@ -1,0 +1,43 @@
+* {
+	font-family: Roboto, Ubuntu;
+
+	&:active,
+	:focus {
+		outline: none !important;
+	}
+}
+
+ul {
+	margin-bottom: 10px;
+}
+
+// 3rd party styles reset
+mat-form-field {
+	font-weight: 300 !important;
+	font-size: 1rem !important;
+}
+
+.mat-drawer-container {
+	position: unset !important;
+}
+
+.mat-drawer-inner-container {
+	overflow-x: hidden !important;
+}
+
+.mat-menu-content {
+	padding: 0px !important;
+}
+
+.mat-menu-panel {
+	min-height: 0px !important;
+	border-radius: 0px !important;
+}
+
+.mat-dialog-container {
+	border-radius: 0px !important;
+}
+
+.mat-button.nav-link {
+	border-radius: 0px !important;
+}

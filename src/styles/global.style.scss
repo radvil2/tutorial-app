@@ -1,0 +1,198 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./variables";
+
+/* html | body |scrollbar */
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #1e1e24;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #6649b8;
+  }
+}
+
+/* App loader animation */
+.app-loader {
+  height: 100vh;
+  width: 100vw;
+  background-color: #333333;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    transform: translateY(-50%);
+  }
+
+  .dot {
+    background-color: grey;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: myAni 1s ease-in-out infinite alternate forwards;
+  }
+  .red {
+    background-color: #ee382b;
+    animation-delay: 0.2s;
+  }
+
+  .yellow {
+    background-color: #fab800;
+    animation-delay: 0.4s;
+  }
+
+  .green {
+    background-color: #2fa550;
+    animation-delay: 0.6s;
+  }
+
+  .blue {
+    background-color: #397ef5;
+    animation-delay: 0.8s;
+  }
+
+  @keyframes myAni {
+    to {
+      transform: translateY(1rem);
+    }
+  }
+}
+
+/* Paragraph */
+p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: justify;
+
+  &.feat {
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    font-family: Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
+    text-align: center;
+    font-style: italic;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      padding: 20px 0 10px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* Card */
+.card {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 18px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Badges */
+.badge {
+  padding: 2px 7px;
+  border-radius: 20px;
+  width: fit-content;
+
+  &.success {
+    background-color: #00d169 !important;
+    color: white !important;
+  }
+
+  &.info {
+    background-color: #0091e6 !important;
+    color: white !important;
+  }
+
+  &.warning {
+    background-color: #a9e600 !important;
+    color: black !important;
+  }
+
+  &.error {
+    background-color: #0091e6 !important;
+    color: black !important;
+  }
+
+  &.dark {
+    background-color: #303030 !important;
+    color: white !important;
+  }
+
+  &.outline {
+    color: #959595 !important;
+    background-color: #ffffff00 !important;
+  }
+
+  &.lvl {
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.24);
+  }
+
+  &.title {
+    display: flex;
+    place-items: center;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    border-radius: 20px !important;
+    border: 1px solid #959595;
+
+    mat-icon {
+      margin-left: -10px !important;
+      margin-right: 5px !important;
+      height: 25px !important;
+      width: 25px !important;
+    }
+  }
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .tooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: #222222e3;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #222222 transparent transparent transparent;
+    }
+  } // end of .tooltiptext
+}

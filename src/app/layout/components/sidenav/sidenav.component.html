@@ -1,0 +1,40 @@
+<nav class="sidenav">
+  <ul class="sidenav-list">
+    <li class="brand">
+      <a routerLink="/profile" class="nav-link">
+        <img src="assets/icons/logo.png" class="brand-img" alt="Brand Image" />
+        <span class="link-text">Tutorial</span>
+      </a>
+      <mat-divider></mat-divider>
+    </li>
+    
+    <!-- <mat-divider></mat-divider> -->
+
+    <!-- Menu item 1 -->
+    <li *ngFor="let el of menuItems" class="nav-item">
+      <a [routerLink]="el?.link" routerLinkActive="active" class="nav-link">
+        <mat-icon color="accent">{{ el?.icon }}</mat-icon>
+        <span class="link-text">{{ el?.label }}</span>
+      </a>
+      <mat-divider></mat-divider>
+    </li>
+
+    <!-- Menu item 2 -->
+    <li *ngFor="let m of menuItems2" class="nav-item additional">
+      <a [routerLink]="m?.link" routerLinkActive="active" class="nav-link">
+        <mat-icon color="accent">{{ m?.icon }}</mat-icon>
+        <span class="link-text">{{ m?.label }}</span>
+      </a>
+      <mat-divider></mat-divider>
+    </li>
+
+    <!-- Profile menu item -->
+    <li class="nav-item profile">
+      <a routerLink="/profile" routerLinkActive="active" class="nav-link">
+        <mat-icon color="accent">account_circle</mat-icon>
+        <span class="link-text">User profile</span>
+      </a>
+      <mat-divider></mat-divider>
+    </li>
+  </ul>
+</nav>

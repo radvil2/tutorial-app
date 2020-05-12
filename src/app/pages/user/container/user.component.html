@@ -1,0 +1,45 @@
+<figure>
+  <div class="cover-photo">
+    <img [src]="userCoverPhoto" alt="User Cover Photo" />
+  </div>
+  <div class="fx row-center">
+    <div class="avatar">
+      <img [src]="userAvatar" alt="User Avatar" />
+    </div>
+  </div>
+  <div class="edit-profile">
+    <button mat-flat-button (click)="editProfile()">
+      <mat-icon>edit</mat-icon>
+      Edit profile
+    </button>
+  </div>
+</figure>
+
+<div class="name">{{ user?.name }}</div>
+
+<!-- <div>
+  <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab *ngFor="let menu of tabMenu" [label]="menu.label">
+    </mat-tab>
+  </mat-tab-group>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+<nav mat-tab-nav-bar mat-align-tabs="center" animationDuration="0ms">
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+@mixin rad-user-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .avatar img {
+    border: 7px solid mat-color($accent);
+  }
+}

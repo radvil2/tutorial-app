@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+@import './variables'; // success color, breakpoint, etc
+
+@include mat-core();
+
+@import './themes/default.theme';
+@import './themes/black.theme';
+
+@import './themes/reset.theme';
+@import '../app/layout/container/layout.theme';
+@import '../app/layout/components/footer/footer.theme';
+// routed pages;
+@import '../app/pages/user/user_info/user_info.theme';
+@import '../app/pages/user/user_edit/user_edit.theme';
+
+@mixin custom-components-theme($theme) {
+	@include rad-reset-theme($theme);
+	@include rad-layout-theme($theme);
+	@include rad-footer-theme($theme);
+	// routed pages custom theme;
+	@include rad-user_info-theme($theme);
+	@include rad-user_edit-theme($theme);
+}
+
+.default-theme {
+	@include angular-material-theme($rad-default-theme);
+	@include custom-components-theme($rad-default-theme);
+}
+
+.black-theme {
+	@include angular-material-theme($rad-black-theme);
+	@include custom-components-theme($rad-black-theme);
+}
